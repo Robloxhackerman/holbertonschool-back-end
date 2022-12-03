@@ -30,4 +30,4 @@ if __name__ == '__main__':
 
     for elem in res:
         if elem.get('completed') is True:
-            print('\t', elem.get('title'))
+            print(elem.get('title'))
