@@ -19,12 +19,13 @@ if __name__ == "__main__":
         task2 = list()
 
         for res_info in res:
-            if res_info.get("userId") == ussr_info.get("id"):
+            if res_info.get("userId") == ussr_id:
                 info = {
                     "username": ussr_info.get("username"),
-                    "tasks": res_info.get("title"),
+                    "task": res_info.get("title"),
                     "completed": res_info.get("completed")
                 }
+
                 task2.append(info)
         task1[ussr_id] = task2
 
