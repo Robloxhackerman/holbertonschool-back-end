@@ -13,7 +13,7 @@ if __name__ == "__main__":
     res = requests.get(todo).json()
     task1 = dict()
 
-    for PEPE1 in res:
+    for PEPE1 in ussr:
 
         task2 = list()
 
