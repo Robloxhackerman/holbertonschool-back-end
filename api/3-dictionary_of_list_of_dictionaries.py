@@ -13,19 +13,20 @@ if __name__ == "__main__":
     res = requests.get(todo).json()
     task1 = dict()
 
-    for PEPE1 in ussr:
+    for ussr_info in ussr:
+        ussr_id = ussr_info.get("id")
 
         task2 = list()
 
-        for PEPE2 in res:
-            if PEPE2.get("userId") == PEPE1.get("id"):
+        for res_info in res:
+            if res_info.get("userId") == ussr_info.get("id"):
                 info = {
-                    "username": PEPE1.get("username"),
-                    "tasks": PEPE2.get("title"),
-                    "completed": PEPE2.get("completed")
+                    "username": ussr_info.get("username"),
+                    "tasks": res_info.get("title"),
+                    "completed": res_info.get("completed")
                 }
-            task2.append(info)
-        task1[PEPE1.get("id")] = task2
+                task2.append(info)
+        task1[ussr_id] = task2
 
     with open(filename, "w") as f:
         f.write(dumps(task1))
